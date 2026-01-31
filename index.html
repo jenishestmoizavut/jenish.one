@@ -176,6 +176,56 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        /* Project Cards (Glassmorphism Upgrade) */
+.card {
+    display: flex;
+    align-items: center;
+    /* The "Prism" Effect: Light source from top-left */
+    background: linear-gradient(
+        135deg, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        rgba(255, 255, 255, 0.01) 100%
+    );
+    /* Crystal clear borders */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.3); /* Catching light on top edge */
+    border-left: 1px solid rgba(255, 255, 255, 0.3); /* Catching light on left edge */
+    
+    padding: 22px;
+    margin-bottom: 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    
+    /* The Blur */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card:hover {
+    transform: translateY(-4px) scale(1.02);
+    /* Inner Glow on Hover */
+    background: linear-gradient(
+        135deg, 
+        rgba(255, 255, 255, 0.15) 0%, 
+        rgba(255, 255, 255, 0.05) 100%
+    );
+    border-color: rgba(255, 255, 255, 0.5);
+    /* Outer Glow matching your accent color */
+    box-shadow: 
+        0 15px 40px -10px rgba(99, 102, 241, 0.4),
+        inset 0 0 20px rgba(255, 255, 255, 0.1); /* Inner light */
+}
+        @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
     </style>
 </head>
 <body>
@@ -183,7 +233,15 @@
     <div class="container">
         
         <div class="profile-header">
-            <h1>Jenish.one ⚡</h1>
+           <div class="profile-header">
+    <img src="landerlogo.png" alt="Jenish.one Logo" style="width: 140px; height: auto; margin-bottom: 10px; filter: drop-shadow(0 0 30px rgba(99, 102, 241, 0.4)); animation: float 6s ease-in-out infinite;">
+    
+    <p class="tagline">
+        <strong>Jenish Chaplot</strong><br>
+        Student Developer & Math Nerd
+    </p>
+    
+    </div>
             <p class="tagline">
                 <strong>Jenish Chaplot</strong><br>
                 Student Developer & Math Nerd
