@@ -3,13 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jenish.one 🚀</title>
+    <title>Jenish.one ⚡</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&display=swap" rel="stylesheet">
+
     <style>
-        /* --- Sleek Dark Theme --- */
+        :root {
+            --bg: #020617;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(148, 163, 184, 0.1);
+            --accent: #6366f1;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
         body {
-            background: #0f172a; /* Dark Slate */
-            color: #f8fafc;
-            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            /* Subtle Mesh Gradient Background */
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.15) 0%, transparent 25%);
+            color: var(--text);
+            font-family: 'Outfit', system-ui, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -17,78 +34,145 @@
             min-height: 100vh;
             margin: 0;
             padding: 20px;
+            overflow-x: hidden;
         }
-        .container { 
-            width: 100%; 
-            max-width: 420px; 
-            text-align: center; 
-            animation: fadeIn 0.5s ease-out;
+
+        .container {
+            width: 100%;
+            max-width: 440px;
+            text-align: center;
+            z-index: 10;
+            animation: fadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
-        
-        /* Typography */
-        h1 { 
-            margin-bottom: 8px; 
-            font-size: 2.5rem; 
-            letter-spacing: -1.5px; 
-            background: linear-gradient(to right, #fff, #94a3b8);
+
+        /* Profile Section */
+        .profile-header {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: -1.5px;
+            background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            display: inline-block;
         }
-        p { 
-            color: #94a3b8; 
-            margin-bottom: 40px; 
-            font-size: 1.05rem; 
-            line-height: 1.5;
+
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            font-weight: 300;
         }
         
-        /* Project Cards */
+        .tagline strong {
+            color: #e2e8f0;
+            font-weight: 500;
+        }
+
+        /* Social Row */
+        .social-row {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .social-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-muted);
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Project Cards (Glassmorphism) */
         .card {
             display: flex;
             align-items: center;
-            background: #1e293b;
-            border: 1px solid #334155;
-            padding: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 22px;
             margin-bottom: 16px;
-            border-radius: 16px;
+            border-radius: 20px;
             text-decoration: none;
             color: white;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(12px); /* The "Frosted" effect */
+            -webkit-backdrop-filter: blur(12px);
         }
-        
-        /* Hover Effects */
+
         .card:hover {
             transform: translateY(-4px) scale(1.02);
-            border-color: #6366f1; /* Indigo Accent */
-            background: #253045;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border-color: rgba(99, 102, 241, 0.5); /* Glow on hover */
+            box-shadow: 0 12px 30px -10px rgba(99, 102, 241, 0.3);
         }
-        
-        .icon { font-size: 2rem; margin-right: 18px; }
-        .info { text-align: left; }
-        .title { display: block; font-weight: 700; font-size: 1.15rem; margin-bottom: 4px; }
-        .desc { font-size: 0.9rem; color: #94a3b8; }
-        
+
+        .card-icon {
+            font-size: 2rem;
+            margin-right: 20px;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+        }
+
+        .card-info {
+            text-align: left;
+            flex: 1;
+        }
+
+        .card-title {
+            display: block;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .card-arrow {
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        .card:hover .card-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
         /* Footer */
-        .footer { 
-            margin-top: 50px; 
-            font-size: 0.85rem; 
-            color: #64748b; 
-            opacity: 0.8; 
+        .footer {
+            margin-top: 60px;
+            font-size: 0.8rem;
+            color: #475569;
         }
-        
-        .social-link {
-            color: #64748b;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-        .social-link:hover { color: #fff; }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
@@ -96,31 +180,47 @@
 <body>
 
     <div class="container">
-        <h1>Jenish.one ⚡️</h1>
-        <p>
-            <strong>Jenish Chaplot</strong><br>
-            Student Developer & Math Nerd
-        </p>
+        
+        <div class="profile-header">
+            <h1>Jenish.one ⚡</h1>
+            <p class="tagline">
+                <strong>Jenish Chaplot</strong><br>
+                Student Developer & Math Nerd
+            </p>
+
+            <div class="social-row">
+                <a href="https://www.linkedin.com/in/jenish-chaplot" target="_blank" class="social-btn" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="https://github.com/jenishestmoizavut" target="_blank" class="social-btn" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="mailto:your-email@example.com" class="social-btn" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </a>
+            </div>
+        </div>
 
         <a href="https://jenishestmoizavut.github.io/attrack/" class="card">
-            <span class="icon">✅</span>
-            <div class="info">
-                <span class="title">Attrack</span>
-                <span class="desc">Smart attendance tracker for students.</span>
+            <span class="card-icon">✅</span>
+            <div class="card-info">
+                <span class="card-title">Attrack</span>
+                <span class="card-desc">Smart attendance tracker for students.</span>
             </div>
+            <div class="card-arrow">→</div>
         </a>
 
         <a href="https://jenishestmoizavut.github.io/simulating-statistics/" class="card">
-            <span class="icon">📊</span>
-            <div class="info">
-                <span class="title">Simulating Statistics</span>
-                <span class="desc">Interactive math visualizations.</span>
+            <span class="card-icon">📊</span>
+            <div class="card-info">
+                <span class="card-title">Simulating Statistics</span>
+                <span class="card-desc">Interactive math visualizations.</span>
             </div>
+            <div class="card-arrow">→</div>
         </a>
 
         <div class="footer">
-            © 2026 Jenish Chaplot • 
-            <a href="https://www.linkedin.com/in/jenish-chaplot" target="_blank" class="social-link">LinkedIn</a>
+            © 2026 Jenish Chaplot
         </div>
     </div>
 
