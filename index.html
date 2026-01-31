@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenish.one 🚀</title>
+    <style>
+        /* --- Sleek Dark Theme --- */
+        body {
+            background: #0f172a; /* Dark Slate */
+            color: #f8fafc;
+            font-family: system-ui, -apple-system, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container { 
+            width: 100%; 
+            max-width: 420px; 
+            text-align: center; 
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        /* Typography */
+        h1 { 
+            margin-bottom: 8px; 
+            font-size: 2.5rem; 
+            letter-spacing: -1.5px; 
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p { 
+            color: #94a3b8; 
+            margin-bottom: 40px; 
+            font-size: 1.05rem; 
+            line-height: 1.5;
+        }
+        
+        /* Project Cards */
+        .card {
+            display: flex;
+            align-items: center;
+            background: #1e293b;
+            border: 1px solid #334155;
+            padding: 20px;
+            margin-bottom: 16px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Hover Effects */
+        .card:hover {
+            transform: translateY(-4px) scale(1.02);
+            border-color: #6366f1; /* Indigo Accent */
+            background: #253045;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .icon { font-size: 2rem; margin-right: 18px; }
+        .info { text-align: left; }
+        .title { display: block; font-weight: 700; font-size: 1.15rem; margin-bottom: 4px; }
+        .desc { font-size: 0.9rem; color: #94a3b8; }
+        
+        /* Footer */
+        .footer { 
+            margin-top: 50px; 
+            font-size: 0.85rem; 
+            color: #64748b; 
+            opacity: 0.8; 
+        }
+        
+        .social-link {
+            color: #64748b;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .social-link:hover { color: #fff; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Jenish.one ⚡️</h1>
+        <p>
+            <strong>Jenish Chaplot</strong><br>
+            Student Developer & Math Nerd
+        </p>
+
+        <a href="https://jenishestmoizavut.github.io/attrack/" class="card">
+            <span class="icon">✅</span>
+            <div class="info">
+                <span class="title">Attrack</span>
+                <span class="desc">Smart attendance tracker for students.</span>
+            </div>
+        </a>
+
+        <a href="https://jenishestmoizavut.github.io/simulating-statistics/" class="card">
+            <span class="icon">📊</span>
+            <div class="info">
+                <span class="title">Simulating Statistics</span>
+                <span class="desc">Interactive math visualizations.</span>
+            </div>
+        </a>
+
+        <div class="footer">
+            © 2026 Jenish Chaplot • 
+            <a href="https://www.linkedin.com/in/jenish-chaplot" target="_blank" class="social-link">LinkedIn</a>
+        </div>
+    </div>
+
+</body>
+</html>
