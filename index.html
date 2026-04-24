@@ -6,7 +6,7 @@
     <title>Jenish.one</title>
     
     <meta property="og:title" content="Jenish.one">
-    <meta property="og:description" content="Personal hub of Jenish Chaplot. Actuarial student and developer.">
+    <meta property="og:description" content="Personal hub for projects and tools. Actuarial student and developer.">
     <meta property="og:image" content="https://jenishestmoizavut.github.io/jenish.one/favicon.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,6 @@
 
         body {
             background-color: var(--bg);
-            /* Subtle Mesh Gradient Background */
             background-image: 
                 radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 25%),
                 radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.15) 0%, transparent 25%);
@@ -44,7 +43,7 @@
 
         .container {
             width: 100%;
-            max-width: 440px;
+            max-width: 460px; /* Slightly wider for the text block */
             text-align: center;
             z-index: 10;
             animation: fadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -108,21 +107,18 @@
             border-color: rgba(255, 255, 255, 0.2);
         }
 
-        /* Project Cards (Glassmorphism Upgrade) */
+        /* Project Cards */
         .card {
             display: flex;
             align-items: center;
-            /* The "Prism" Effect: Light source from top-left */
             background: linear-gradient(
                 135deg, 
                 rgba(255, 255, 255, 0.1) 0%, 
                 rgba(255, 255, 255, 0.01) 100%
             );
-            /* Crystal clear borders */
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-top: 1px solid rgba(255, 255, 255, 0.3);
             border-left: 1px solid rgba(255, 255, 255, 0.3);
-            
             padding: 22px;
             margin-bottom: 16px;
             border-radius: 20px;
@@ -130,25 +126,20 @@
             color: white;
             position: relative;
             overflow: hidden;
-            
-            /* The Blur */
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-            
             transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         .card:hover {
             transform: translateY(-4px) scale(1.02);
-            /* Inner Glow on Hover */
             background: linear-gradient(
                 135deg, 
                 rgba(255, 255, 255, 0.15) 0%, 
                 rgba(255, 255, 255, 0.05) 100%
             );
             border-color: rgba(255, 255, 255, 0.5);
-            /* Outer Glow matching your accent color */
             box-shadow: 
                 0 15px 40px -10px rgba(99, 102, 241, 0.4),
                 inset 0 0 20px rgba(255, 255, 255, 0.1);
@@ -193,9 +184,44 @@
             transform: translateX(0);
         }
 
+        /* About Section */
+        .about-box {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 24px;
+            margin-top: 24px;
+            text-align: left;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .about-box p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        .disclaimer {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 14px;
+            border-radius: 12px;
+            border-left: 3px solid var(--accent);
+            line-height: 1.5;
+        }
+
+        .disclaimer strong {
+            color: #e2e8f0;
+            font-weight: 600;
+        }
+
         /* Footer */
         .footer {
-            margin-top: 60px;
+            margin-top: 40px;
             font-size: 0.8rem;
             color: #475569;
         }
@@ -260,6 +286,15 @@
             </div>
             <div class="card-arrow">→</div>
         </a>
+
+        <div class="about-box">
+            <p>
+                I'm an actuarial student balancing risk models with web development. This whole developer thing is my part-time gig—just a way to build useful stuff when I'm not studying. I plan on vibe-coding a lot more projects in the future, so expect this space to grow chaps ;) 
+            </p>
+            <div class="disclaimer">
+                <strong>The Fine Print:</strong> All the projects you see here are open-source. Feel free to explore how things work, but the code is strictly <em>not for commercial use</em> in any capacity.
+            </div>
+        </div>
 
         <div class="footer">
             © 2026 Jenish Chaplot
