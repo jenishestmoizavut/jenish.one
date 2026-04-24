@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jenish.one</title>
     
+    <meta property="og:title" content="Jenish.one">
+    <meta property="og:description" content="Personal hub of Jenish Chaplot. Actuarial student and developer.">
+    <meta property="og:image" content="https://jenishestmoizavut.github.io/jenish.one/favicon.png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="/jenish.one/favicon.png">
-
-
+    <link rel="icon" type="image/png" href="/jenish.one/favicon.png">
 
     <style>
         :root {
@@ -106,36 +108,59 @@
             border-color: rgba(255, 255, 255, 0.2);
         }
 
-        /* Project Cards (Glassmorphism) */
+        /* Project Cards (Glassmorphism Upgrade) */
         .card {
             display: flex;
             align-items: center;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
+            /* The "Prism" Effect: Light source from top-left */
+            background: linear-gradient(
+                135deg, 
+                rgba(255, 255, 255, 0.1) 0%, 
+                rgba(255, 255, 255, 0.01) 100%
+            );
+            /* Crystal clear borders */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+            
             padding: 22px;
             margin-bottom: 16px;
             border-radius: 20px;
             text-decoration: none;
             color: white;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             position: relative;
             overflow: hidden;
-            backdrop-filter: blur(12px); /* The "Frosted" effect */
-            -webkit-backdrop-filter: blur(12px);
+            
+            /* The Blur */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         .card:hover {
             transform: translateY(-4px) scale(1.02);
-            border-color: rgba(99, 102, 241, 0.5); /* Glow on hover */
-            box-shadow: 0 12px 30px -10px rgba(99, 102, 241, 0.3);
+            /* Inner Glow on Hover */
+            background: linear-gradient(
+                135deg, 
+                rgba(255, 255, 255, 0.15) 0%, 
+                rgba(255, 255, 255, 0.05) 100%
+            );
+            border-color: rgba(255, 255, 255, 0.5);
+            /* Outer Glow matching your accent color */
+            box-shadow: 
+                0 15px 40px -10px rgba(99, 102, 241, 0.4),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
         }
-.card-icon {
-  width: 40px;
-  height: 40px;
-  margin-right: 20px;
-  object-fit: contain;
-  filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
-}
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 20px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+        }
 
         .card-info {
             text-align: left;
@@ -179,56 +204,12 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        /* Project Cards (Glassmorphism Upgrade) */
-.card {
-    display: flex;
-    align-items: center;
-    /* The "Prism" Effect: Light source from top-left */
-    background: linear-gradient(
-        135deg, 
-        rgba(255, 255, 255, 0.1) 0%, 
-        rgba(255, 255, 255, 0.01) 100%
-    );
-    /* Crystal clear borders */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-top: 1px solid rgba(255, 255, 255, 0.3); /* Catching light on top edge */
-    border-left: 1px solid rgba(255, 255, 255, 0.3); /* Catching light on left edge */
-    
-    padding: 22px;
-    margin-bottom: 16px;
-    border-radius: 20px;
-    text-decoration: none;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    
-    /* The Blur */
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-    
-    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
 
-.card:hover {
-    transform: translateY(-4px) scale(1.02);
-    /* Inner Glow on Hover */
-    background: linear-gradient(
-        135deg, 
-        rgba(255, 255, 255, 0.15) 0%, 
-        rgba(255, 255, 255, 0.05) 100%
-    );
-    border-color: rgba(255, 255, 255, 0.5);
-    /* Outer Glow matching your accent color */
-    box-shadow: 
-        0 15px 40px -10px rgba(99, 102, 241, 0.4),
-        inset 0 0 20px rgba(255, 255, 255, 0.1); /* Inner light */
-}
         @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
     </style>
 </head>
 <body>
@@ -236,35 +217,34 @@
     <div class="container">
         
         <div class="profile-header">
-           <div class="profile-header">
-    <img src="favicon.png" alt="Jenish.one Logo" style="width: 140px; height: auto; margin-bottom: 10px; filter: drop-shadow(0 0 30px rgba(99, 102, 241, 0.4)); animation: float 6s ease-in-out infinite;">
-    
-    <p class="tagline">
-        <strong>Jenish Chaplot</strong><br>
-        Student Developer & Math Nerd
-    </p>
-    
-    </div>
-        
-
+            <img src="favicon.png" alt="Jenish.one Logo" style="width: 140px; height: auto; margin-bottom: 10px; filter: drop-shadow(0 0 30px rgba(99, 102, 241, 0.4)); animation: float 6s ease-in-out infinite;">
+            
+            <p class="tagline">
+                <strong>Jenish Chaplot</strong><br>
+                Actuarial Student & Developer
+            </p>
+            
             <div class="social-row">
                 <a href="https://www.linkedin.com/in/jenish-chaplot" target="_blank" class="social-btn" aria-label="LinkedIn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 </a>
+                
                 <a href="https://github.com/jenishestmoizavut" target="_blank" class="social-btn" aria-label="GitHub">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                 </a>
-               
+
+                <a href="https://instagram.com/jenishdotone" target="_blank" class="social-btn" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+
+                <a href="mailto:contactjenish.one@gmail.com" class="social-btn" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </a>
             </div>
         </div>
 
         <a href="https://jenishestmoizavut.github.io/attrack/" class="card">
-            <img
-  src="attrack.svg"
-  alt="Attrack logo"
-  class="card-icon"
-/>
-
+            <img src="attrack.svg" alt="Attrack logo" class="card-icon" />
             <div class="card-info">
                 <span class="card-title">Attrack (App/Web)</span>
                 <span class="card-desc">Smart attendance tracker for students.</span>
@@ -273,12 +253,7 @@
         </a>
 
         <a href="https://jenishestmoizavut.github.io/simulating-statistics/" class="card">
-         <img
-  src="simstats.svg"
-  alt="Simulating Statistics logo"
-  class="card-icon"
-/>
-
+            <img src="simstats.svg" alt="Simulating Statistics logo" class="card-icon" />
             <div class="card-info">
                 <span class="card-title">Simulating Statistics</span>
                 <span class="card-desc">Interactive math visualizations.</span>
